@@ -15,14 +15,13 @@ $(function () {
     //  
     //  ****** ex: JavaSCript save content to local storage on click
     //
-    //  subtractButton.addEventListener("click", function() {
-      //  if (count > 0) {
-      //    count--;
-      //    counter.textContent = count;
-      //    localStorage.setItem("count", count);
-      //   }
-      // });
-    //  ****** end of ex
+     subtractButton.addEventListener("click", function() {
+       if (count > 0) {
+         count--;
+         counter.textContent = count;
+         localStorage.setItem("count", count);
+        }
+      }); 
 
   var saveButtonEl = $('.saveBtn');
   var hour9TextInput = $('#hour-9').children('textarea').value; //this is the content we are putting in the text area. we need to save this
