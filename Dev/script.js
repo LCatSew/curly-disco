@@ -2,6 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var currentDayEl = $('#currentDay');
+var saveButtonEl = $('.saveBtn');
 
 function displayDate() {
   var rightNow = dayjs().format('MMM DD, YYYY');
@@ -19,14 +20,26 @@ $(function () {
     //  
     //  ****** ex: JavaSCript save content to local storage on click
     //
-    //  subtractButton.addEventListener("click", function() {
-    //    if (count > 0) {
-    //      count--;
-    //      counter.textContent = count;
+    //  saveButtonElButton.addEventListener("click", function() {
+    //    var 
     //      localStorage.setItem("count", count);
     //     }
     //   }); 
-
+      document.addEventListener('DOMContentLoaded', function() {
+        // Add click event listeners to all save buttons
+        const saveButtons = document.querySelectorAll('.saveBtn');
+        
+        saveButtons.forEach(button => {
+          button.addEventListener('click', function(event) {
+            const timeBlock = event.currentTarget.closest('.time-block');
+            const id = timeBlock.id;
+            const userInput = timeBlock.querySelector('.description').value;
+            
+            // Save the user input to local storage using the time block's id as the key
+            localStorage.setItem(id, userInput);
+          });
+        });
+      });
   var saveButtonEl = $('.saveBtn');
   var hour9TextInput = $('#hour-9').children('textarea').value; //this is the content we are putting in the text area. we need to save this
   
