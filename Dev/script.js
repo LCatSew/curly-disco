@@ -2,7 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var currentDayEl = $('#currentDay');
-var saveButtonEl = $('.saveBtn');
+
 
 function displayDate() {
   var rightNow = dayjs().format('MMM DD, YYYY');
@@ -40,7 +40,7 @@ $(function () {
           });
         });
       });
-  var saveButtonEl = $('.saveBtn');
+ 
   var hour9TextInput = $('#hour-9').children('textarea').value; //this is the content we are putting in the text area. we need to save this
   
 
