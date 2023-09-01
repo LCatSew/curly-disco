@@ -56,5 +56,5 @@ $(function () {
   });
 
 
-  displayDate();
+displayDate();
   //instead of grabbing by ID grab by a common class and do a for loop to rotate through
