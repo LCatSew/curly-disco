@@ -1,8 +1,12 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+var currentDayEl = $('#currentDay');
 
-
+function displayDate() {
+  var rightNow = dayjs().format('MMM DD, YYYY');
+  currentDayEl.text(rightNow);
+}
 
 
 $(function () {
@@ -15,13 +19,13 @@ $(function () {
     //  
     //  ****** ex: JavaSCript save content to local storage on click
     //
-     subtractButton.addEventListener("click", function() {
-       if (count > 0) {
-         count--;
-         counter.textContent = count;
-         localStorage.setItem("count", count);
-        }
-      }); 
+    //  subtractButton.addEventListener("click", function() {
+    //    if (count > 0) {
+    //      count--;
+    //      counter.textContent = count;
+    //      localStorage.setItem("count", count);
+    //     }
+    //   }); 
 
   var saveButtonEl = $('.saveBtn');
   var hour9TextInput = $('#hour-9').children('textarea').value; //this is the content we are putting in the text area. we need to save this
@@ -35,7 +39,7 @@ $(function () {
 
 
 
-
+  
 
     //
     // TODO: Add code to apply the past, present, or future class to each time
@@ -51,4 +55,6 @@ $(function () {
     // TODO: Add code to display the current date in the header of the page.
   });
 
+
+  displayDate();
   //instead of grabbing by ID grab by a common class and do a for loop to rotate through
